@@ -1,5 +1,5 @@
 import React  from 'react';
-var Router = require('react-router');
+import Router from 'react-router';
 
 var SearchGithub = React.createClass({
   mixins: [Router.History],
