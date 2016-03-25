@@ -24418,6 +24418,7 @@
 	  handleSubmit: function handleSubmit() {
 	    var username = this.usernameRef.value;
 	    this.usernameRef.value = " ";
+	    console.log(username);
 	    this.history.pushState(null, "/profile/" + username);
 	  },
 	  render: function render() {
@@ -25721,7 +25722,7 @@
 /* 231 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	var _react = __webpack_require__(1);
 
@@ -25730,7 +25731,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var UserProfile = _react2.default.createClass({
-	  displayName: 'UserProfile',
+	  displayName: "UserProfile",
 
 	  propTypes: {
 	    username: _react2.default.PropTypes.string.isRequired,
@@ -25738,18 +25739,57 @@
 	  },
 	  render: function render() {
 	    return _react2.default.createElement(
-	      'div',
+	      "div",
 	      null,
 	      _react2.default.createElement(
-	        'p',
+	        "p",
 	        null,
-	        'User Profile'
+	        "User Profile"
+	      ),
+	      this.props.bio.avatar_url && _react2.default.createElement(
+	        "li",
+	        { className: "list-group-item" },
+	        " ",
+	        _react2.default.createElement("img", { width: "100%", src: this.props.bio.avatar_url }),
+	        " "
+	      ),
+	      this.props.bio.location && _react2.default.createElement(
+	        "li",
+	        { className: "list-group-item" },
+	        " Location: ",
+	        this.props.bio.location,
+	        " "
+	      ),
+	      this.props.bio.name && _react2.default.createElement(
+	        "li",
+	        { className: "list-group-item" },
+	        " Name: ",
+	        this.props.bio.name,
+	        " "
+	      ),
+	      this.props.bio.email && _react2.default.createElement(
+	        "li",
+	        { className: "list-group-item" },
+	        " Email: ",
+	        this.props.bio.email,
+	        " "
+	      ),
+	      this.props.bio.blog && _react2.default.createElement(
+	        "li",
+	        { className: "list-group-item" },
+	        " Blog: ",
+	        this.props.bio.blog,
+	        " "
 	      ),
 	      _react2.default.createElement(
-	        'p',
-	        null,
-	        'Username: ',
-	        this.props.username
+	        "li",
+	        { className: "list-group-item" },
+	        _react2.default.createElement(
+	          "p",
+	          null,
+	          "Username: ",
+	          this.props.username
+	        )
 	      )
 	    );
 	  }
@@ -25929,7 +25969,6 @@
 	        _react2.default.createElement("input", { type: "text", className: "form-control", placeholder: "add new note", ref: function ref(_ref) {
 	            return _this2.setRef(_ref);
 	          } }),
-	        " // one way to reach 'this' outside of function",
 	        _react2.default.createElement(
 	          "span",
 	          { classNmae: "input-group-btn" },
@@ -25937,8 +25976,7 @@
 	            "button",
 	            { className: "btn btn-default", type: "button", onClick: this.handleSubmit.bind(this) },
 	            " submit "
-	          ),
-	          "// another way to reach 'this' outside of function"
+	          )
 	        )
 	      );
 	    }

@@ -12,9 +12,9 @@ class AddNote extends React.Component{
   render(){
     return(
       <div className="input-group">
-        <input type="text" className="form-control" placeholder="add new note" ref={(ref) => this.setRef(ref)}/> // one way to reach 'this' outside of function
+        <input type="text" className="form-control" placeholder="add new note" ref={(ref) => this.setRef(ref)}/>
         <span classNmae="input-group-btn">
-          <button className="btn btn-default" type="button" onClick={this.handleSubmit.bind(this)}> submit </button>// another way to reach 'this' outside of function
+          <button className="btn btn-default" type="button" onClick={this.handleSubmit.bind(this)}> submit </button>
         </span>
       </div>
     )
