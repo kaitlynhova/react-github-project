@@ -4,7 +4,8 @@ var Repos           = require('./Github/Repos');
 var UserProfile     = require('./Github/UserProfile');
 var Notes           = require('./Notes/Notes');
 var ReactFireMixin  = require('reactfire');
-var Firebase        = require('firebase')
+var Firebase        = require('firebase');
+var helpers         = require('../utils/helpers');
 
 var Profile = React.createClass({
   mixins: [
@@ -14,15 +15,23 @@ var Profile = React.createClass({
     return{
       notes: [1,2,3],
       bio: {
-        name: 'Kaitlyn Hova times'
+        name: ''
       },
-      repos: ["a", "b", "c"]
+      repos: []
     }
   },
   componentDidMount: function(){
     this.ref = new Firebase('https://blistering-heat-6875.firebaseio.com/?page=Security');
     var childRef = this.ref.child(this.props.params.username);
     this.bindAsArray(childRef, "notes");
+
+    helpers.getGithubInfo(this.props.params.username)
+    .then(function(data){
+      this.setState({
+        bio: data.bio,
+        repos: data.repos
+      })
+    }.bind(this))
   },
   componentWillUnmount: function(){
     this.unbind('notes');
