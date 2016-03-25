@@ -24402,23 +24402,21 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactRouter = __webpack_require__(159);
-
-	var _reactRouter2 = _interopRequireDefault(_reactRouter);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Router = __webpack_require__(159);
 
 	var SearchGithub = _react2.default.createClass({
 	  displayName: 'SearchGithub',
 
-	  mixins: [_reactRouter2.default.History],
+	  mixins: [Router.History],
 	  getRef: function getRef(ref) {
 	    this.usernameRef = ref;
 	  },
 	  handleSubmit: function handleSubmit() {
 	    var username = this.usernameRef.value;
 	    this.usernameRef.value = " ";
-	    console.log(username);
+	    console.log(this);
 	    this.history.pushState(null, "/profile/" + username);
 	  },
 	  render: function render() {

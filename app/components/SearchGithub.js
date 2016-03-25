@@ -1,5 +1,5 @@
-import React  from 'react';
-import Router from 'react-router';
+import React        from 'react';
+var Router = require('react-router');
 
 var SearchGithub = React.createClass({
   mixins: [Router.History],
@@ -9,6 +9,7 @@ var SearchGithub = React.createClass({
   handleSubmit: function(){
     var username = this.usernameRef.value;
     this.usernameRef.value = " ";
+    console.log(this);
     this.history.pushState(null, "/profile/" + username);
   },
   render: function(){
