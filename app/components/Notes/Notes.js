@@ -1,4 +1,4 @@
-var React = require('react');
+import React  from 'react';
 var NotesList = require('./NotesList');
 var AddNote = require('./AddNote');
 
