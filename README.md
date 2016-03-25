@@ -23,11 +23,19 @@ npm install --save-dev babel-core@6.3.13 babel-loader@6.2.0 babel-preset-es2015@
 If you haven't already
 ```
 npm install webpack -g
+
+
 ```
 ###install React router
 *it has a dependency of history, v1.13.1
 ```
 npm install --save react-router@1.0.1 history@1.13.1
+```
+
+###install react fire
+v 0.5.1
+```
+npm install --save reactfire@0.5.1
 ```
 
 ### Running on localhost
