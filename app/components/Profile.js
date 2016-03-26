@@ -26,7 +26,7 @@ var Profile = React.createClass({
   },
   componentWillReceiveProps: function(nextProps){
     this.unbind('notes');
-    this.init(nextProps.params.username);
+    this.init(nextProps.params.username.trim());
   },
   componentWillUnmount: function(){
     this.unbind('notes');
