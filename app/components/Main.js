@@ -1,5 +1,6 @@
 import React        from 'react';
 import SearchGithub from './SearchGithub';
+require('../stylesheets/main.scss');
 
 var Main = React.createClass({
   render: function(){
